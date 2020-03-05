@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+    <nav id="navBar" class="navbar navbar-dark bg-dark">
+        <div class="navbar-brand"><h3>Weather App</h3></div>
+        <div class="navbar-text mr-auto">Hi and wellcome to my getto Weather App</div>
+        <button id="WeatherStanderdBtn" class="btn btn-outline-light ml-auto">Change to Celsius<!-- will be changed by js --></button>
+    </nav>
+
+    <div id="container" class="container mt-3">
+        <div class="card card-body mt-2">
+            <div class="align-self-center mb-0 pb-0">
+                <canvas id="icon1" width="128" height="128"></canvas>
+            </div>
+            <div class="align-self-center row card-title mb-4 mt-0 pt-0">
+                <h1 id="WeatherTemp" class="col font-weight-bold pr-0 display-2"><!-- js fill here --></h1>
+                <h3 id="WeatherStanderd" class="col pl-0">Please Wait<!-- will be changed by js --></h3>
+            </div>
+            <div class="align-self-center mb-1">
+                <h4  id="status" class="font-weight-normal"><!-- js fill here --></h4>
+            </div>
+            <div id="location" class="align-self-center mt-1 font-weight-light">
+                <!-- js fill here -->
+            </div>
+            <br><br><br>
+            <div class="card-body">
+                <dir class="row">
+                    <select name="city picker" id="citypicker" class="form-control col-md-7 col-sm-12 my-1 mx-1">
+                        <option value="tehran">Tehran</option>
+                        <option value="bandar-e-abbas">Bandar-e-abbas</option>
+                        <option value="shiraz">Shiraz</option>
+                        <option value="mashhad">Mashhad</option>
+                        <option value="esfahan">Esfahan</option>
+                        <option value="yazd">Yazd</option>
+                    </select>
+                    <button id="citypickerBtn" class="btn btn-outline-dark my-1 mx-1 col-md-4 col-sm-12">Change location</button>
+                </dir>
+            </div>
+            <br><br><br>
+            <div class="align-top card-title align-items-center row  card-body">
+                <div class="col-md-4 col-sm-12 align-text-top">
+                    <dir class="text-center">
+                        all of the data has been fetched from <a href="https://darksky.net" target="_">Dark Sky API</a>
+                    </dir>
+                </div>
+                <div class="col-md-8 col-sm-12 align-text-top">
+                    <dir class="text-center">
+                        <span class="align-text-top row">
+                            <div id="humidity" class="col mb-3"><!-- js fill here --></div>
+                            <div id="pressure" class="col"><!-- js fill here --></div>
+                        </span>
+                        <span class="align-text-top row">
+                            <div id="windSpeed" class="col mb-3"><!-- js fill here --></div>
+                            <div id="visibility" class="col"><!-- js fill here --></div>
+                        </span>
+                    </dir>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card card-body mx-auto my-4 text-center">
+            <div class="align-self-center mb-0 pb-0">
+                <canvas id="icon2" width="128" height="128"></canvas>
+            </div>
+            <div class="align-self-center row card-title mb-4 mt-0 pt-0">
+                <h1 id="ScrollerWeatherTemp" class="col font-weight-bold pr-0 display-2">20</h1>
+                <h3 id="ScrollerWeatherStanderd" class="col pl-0">c</h3>
+            </div>
+            <div>
+                <h1 id="ScrollerCityName" class="font-weight-bold display-2 mx-auto">Tehran</h1>
+            </div> 
+            <div>
+                <button id="previousBtn" class="btn btn-outline-dark col-2">previous city</button>
+                <button id="nextBtn" class="btn btn-dark col-2">next city</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer bg-dark mt-2">
+        <div class="text-center text-muted py-2">
+            codded by some <a href="https://google.com" target="_">dude</a>
+        </div>
+    </footer>
+
+    <script src="ui.js"></script>
+    <script src="api.js"></script>
+    <script src="skycons.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
