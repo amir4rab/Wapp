@@ -1,6 +1,6 @@
 class WeatherApi {
     async getWeather(apiKey){
-        const weatherData = await fetch(apiKey);
+        const weatherData = await fetch(`https://api.darksky.net/forecast/${apiKey}`);
 
         const weatherDataJson = await weatherData.json();
 
